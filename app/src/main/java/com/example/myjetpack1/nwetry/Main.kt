@@ -1,9 +1,11 @@
 package com.example.myjetpack1.nwetry
 
+
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
+
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -15,11 +17,13 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
+
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import java.lang.reflect.Modifier
+
+import com.example.myjetpack1.R
 
 class Main: ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,71 +42,106 @@ class Main: ComponentActivity() {
     fun setdata():MutableList<User>
     {
         val list= mutableListOf<User>()
-        list.add(User(RAM = "12GB"))
-        list.add(User(Proccesor = "snapdragon 888 procesor"))
-        list.add(User(Main_camera = "40 MP Main Camera"))
-        list.add(User(Front_camera = "20 MP front camera"))
-        list.add(User(Water_proff = "Water Prooof"))
-        list.add(User(SSD_space = "256GB SSd"))
-        list.add(User(Price = "RS 10000"))
-
-
+        list.add(User(puppyimage1=R.drawable.image4,RAM = "12GB",Proccesor = "snapdragon 888 procesor",
+            Main_camera = "40 MP Main Camera",Front_camera = "20 MP front camera",Water_proff = "Water Prooof",
+            SSD_space = "256GB SSd",Price = "RS 10000"))
+        list.add(User(puppyimage1=R.drawable.immage,RAM = "12GB",Proccesor = "snapdragon 888 procesor",
+            Main_camera = "40 MP Main Camera",Front_camera = "20 MP front camera",Water_proff = "Water Prooof",
+            SSD_space = "256GB SSd",Price = "RS 10000"))
+        list.add(User(puppyimage1=R.drawable.immage2,RAM = "12GB",Proccesor = "snapdragon 888 procesor",
+            Main_camera = "40 MP Main Camera",Front_camera = "20 MP front camera",Water_proff = "Water Prooof",
+            SSD_space = "256GB SSd",Price = "RS 10000"))
+        list.add(User(puppyimage1=R.drawable.image10,RAM = "12GB",Proccesor = "snapdragon 888 procesor",
+            Main_camera = "40 MP Main Camera",Front_camera = "20 MP front camera",Water_proff = "Water Prooof",
+            SSD_space = "256GB SSd",Price = "RS 10000"))
+        list.add(User(puppyimage1=R.drawable.image11,RAM = "12GB",Proccesor = "snapdragon 888 procesor",
+            Main_camera = "40 MP Main Camera",Front_camera = "20 MP front camera",Water_proff = "Water Prooof",
+            SSD_space = "256GB SSd",Price = "RS 10000"))
+        list.add(User(puppyimage1=R.drawable.image12,RAM = "12GB",Proccesor = "snapdragon 888 procesor",
+            Main_camera = "40 MP Main Camera",Front_camera = "20 MP front camera",Water_proff = "Water Prooof",
+            SSD_space = "256GB SSd",Price = "RS 10000"))
+        list.add(User(puppyimage1=R.drawable.image13,RAM = "12GB",Proccesor = "snapdragon 888 procesor",
+            Main_camera = "40 MP Main Camera",Front_camera = "20 MP front camera",Water_proff = "Water Prooof",
+            SSD_space = "256GB SSd",Price = "RS 10000"))
         return list
     }
 }
 @Composable
-
 fun setlayout( user: User)
 {
     Card(
         shape = RoundedCornerShape(8.dp),
-        modifier = androidx.compose.ui.Modifier.padding(10.dp).fillMaxWidth(),
+        modifier = Modifier
+            .padding(10.dp)
+            .fillMaxWidth(),
         backgroundColor = MaterialTheme.colors.surface,
     ) {
-        Box(modifier = androidx.compose.ui.Modifier.height(360.dp)) {
+        Box(modifier = Modifier.height(320.dp)) {
             Column() {
                 Text(
-                    text = "Samsung M31 12GB", modifier = androidx.compose.ui.Modifier.padding(
+                    text = "Samsung M31 12GB", modifier =Modifier.padding(
                         top = 24.dp, start = 22.dp
                     )
                 )
-                Text(text = "----------------------------------------------------------------------")
+                Text(text = "------------------------------------------------------------------------------------")
                 Row() {
-
+      Image(painter = painterResource(id = user.puppyimage1!!), contentDescription = "false",modifier =
+      Modifier.size(150.dp))
                     Column {
                         Text(
                             text = user.RAM!!,
-                            modifier = androidx.compose.ui.Modifier.padding(top = 4.dp),
+                            modifier = Modifier.padding(
+                                top = 4.dp,
+                                start = 22.dp
+                            ),
                             fontSize = 15.sp
                         )
                         Text(
                             text = user.Proccesor!!,
-                            modifier = androidx.compose.ui.Modifier.padding(top = 4.dp),
+                            modifier = Modifier.padding(
+                                top = 4.dp,
+                                start = 22.dp
+                            ),
                             fontSize = 15.sp
                         )
                         Text(
                             text = user.Main_camera!!,
-                            modifier = androidx.compose.ui.Modifier.padding(top = 4.dp),
+                            modifier = Modifier.padding(
+                                top = 4.dp,
+                                start = 22.dp
+                            ),
                             fontSize = 15.sp
                         )
                         Text(
                             text = user.Front_camera!!,
-                            modifier = androidx.compose.ui.Modifier.padding(top = 4.dp),
+                            modifier = Modifier.padding(
+                                top = 4.dp,
+                                start = 22.dp
+                            ),
                             fontSize = 15.sp
                         )
                         Text(
                             text = user.Water_proff!!,
-                            modifier = androidx.compose.ui.Modifier.padding(top = 4.dp),
+                            modifier = Modifier.padding(
+                                top = 4.dp,
+                                start = 22.dp
+                            ),
                             fontSize = 15.sp
                         )
                         Text(
                             text = user.SSD_space!!,
-                            modifier = androidx.compose.ui.Modifier.padding(top = 4.dp),
+                            modifier = Modifier.padding(
+                                top = 4.dp,
+                                start = 22.dp
+                            ),
                             fontSize = 15.sp
                         )
                         Text(
                             text = user.Price!!,
-                            modifier = androidx.compose.ui.Modifier.padding(top = 4.dp),
+                            modifier = Modifier.padding(
+                                top = 4.dp,
+                                start = 22.dp
+                            ),
                             fontSize = 15.sp
                         )
 
@@ -113,18 +152,18 @@ fun setlayout( user: User)
                 }
                 Column() {
 
-                    Text(text = "-----------------------------------------------------------------------")
+                    Text(text = "-------------------------------------------------------------------------------------")
 
                     Row() {
                         Text(
                             text = "ADD to Compare", modifier = androidx.compose.ui.Modifier.padding(
-                                top = 24.dp, start = 22.dp
+                                top = 4.dp, start = 22.dp
                             )
                         )
                         val mRememberObserver = remember { mutableStateOf("") }
 
                         RadioButton(modifier = androidx.compose.ui.Modifier.padding(
-                            top = 24.dp, start = 150.dp
+                            top = 4.dp, start = 150.dp
                         ),
                             selected = mRememberObserver.value == "mText",
                             onClick = { mRememberObserver.value = "mText" })
