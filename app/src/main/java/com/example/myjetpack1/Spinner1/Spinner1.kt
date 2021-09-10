@@ -47,7 +47,7 @@ fun spinner(context: Context)
 
     var array3: Array<String> = arrayOf("Samsung Galaxy M30s 6GB","Suraj","suraj")
 
-    val mobilename:String by remember{
+    var mobilename:String by remember{
         mutableStateOf(array3[0])
     }
 
@@ -66,28 +66,16 @@ fun spinner(context: Context)
                     expanded = close,
                     onDismissRequest = { close = false },
                     modifier = Modifier.padding(start = 40.dp),
-                 properties = PopupProperties(focusable = true)
+
                 )
                 {
-                    DropdownMenuItem(onClick = {
-                        Toast.makeText(context,array3[0],Toast.LENGTH_SHORT).show()
-                        close=false
-
-
-                    }) {
-                        Text(text =mobilename)
-                    }
-                    DropdownMenuItem(onClick = {
-                        Toast.makeText(context,"Fistelement",Toast.LENGTH_SHORT).show()
-                        close=false
-                    }) {
-                        Text(text = "Avinash")
-                    }
-                    DropdownMenuItem(onClick = {
-                        Toast.makeText(context,"Fistelement",Toast.LENGTH_SHORT).show()
-                        close=false
-                    }) {
-                        Text(text = "Avinash")
+                    array3.forEach { city ->
+                        DropdownMenuItem(onClick = {
+                            close = false
+                            mobilename = city
+                        }) {
+                            Text(city)
+                        }
                     }
                 }
                 // Back arrow here
@@ -104,6 +92,9 @@ fun spinner(context: Context)
                 }
 
                 }
+    var mobilename1:String by remember {
+        mutableStateOf(array3[0])
+    }
     var close1 by remember { mutableStateOf(false)}
     Card(modifier = Modifier
         .fillMaxWidth()
@@ -116,39 +107,26 @@ fun spinner(context: Context)
 
             close1=!close1
         }){
-
             DropdownMenu(
                 expanded = close1,
                 onDismissRequest = { close1 = false },
                 modifier = Modifier.padding(start = 40.dp),
-                        properties = PopupProperties(focusable = true)
 
-            )
+                )
             {
-                DropdownMenuItem(onClick = {
-                    Toast.makeText(context,"Fistelement",Toast.LENGTH_SHORT).show()
-                    close1=false
-
-                }) {
-                    Text(text = "sinha")
-                }
-                DropdownMenuItem(onClick = {
-                    Toast.makeText(context,"Fistelement",Toast.LENGTH_SHORT).show()
-                    close1=false
-                }) {
-                    Text(text = "Avinash")
-                }
-                DropdownMenuItem(onClick = {
-                    Toast.makeText(context,"Fistelement",Toast.LENGTH_SHORT).show()
-                    close1=false
-                }) {
-                    Text(text = "Avinash")
+                array3.forEach { city1 ->
+                    DropdownMenuItem(onClick = {
+                        close1 = false
+                        mobilename1 = city1
+                    }) {
+                        Text(city1)
+                    }
                 }
             }
             // Back arrow here
             Row() {
 
-                Text(text = mobilename,modifier = Modifier.padding(start = 40.dp))
+                Text(text = mobilename1,modifier = Modifier.padding(start = 40.dp))
                 Icon(imageVector =Icons.Filled.ArrowDropDown, contentDescription ="" ,modifier =
                 Modifier.padding(start = 60
                     .dp)
@@ -158,6 +136,9 @@ fun spinner(context: Context)
 
         }
 
+    }
+    var mobilename2:String by remember {
+        mutableStateOf(array3[0])
     }
     var close2 by remember { mutableStateOf(false)}
     Card(modifier = Modifier
@@ -174,34 +155,22 @@ fun spinner(context: Context)
                 expanded = close2,
                 onDismissRequest = { close2 = false },
                 modifier = Modifier.padding(start = 40.dp),
-                        properties = PopupProperties(focusable = true)
 
-            )
+                )
             {
-                DropdownMenuItem(onClick = {
-                    Toast.makeText(context,"Fistelement",Toast.LENGTH_SHORT).show()
-                    close2=false
-
-                }) {
-                    Text(text = "kumar")
-                }
-                DropdownMenuItem(onClick = {
-                    Toast.makeText(context,"Fistelement",Toast.LENGTH_SHORT).show()
-                    close2=false
-                }) {
-                    Text(text = "Avinash")
-                }
-                DropdownMenuItem(onClick = {
-                    Toast.makeText(context,"Fistelement",Toast.LENGTH_SHORT).show()
-                    close2=false
-                }) {
-                    Text(text = "Avinash")
+                array3.forEach { city1 ->
+                    DropdownMenuItem(onClick = {
+                        close2 = false
+                        mobilename2= city1
+                    }) {
+                        Text(city1)
+                    }
                 }
             }
             // Back arrow here
             Row() {
 
-                Text(text = mobilename,modifier = Modifier.padding(start = 40.dp))
+                Text(text = mobilename2,modifier = Modifier.padding(start = 40.dp))
                 Icon(imageVector =Icons.Filled.ArrowDropDown, contentDescription ="" ,modifier =
                 Modifier.padding(start = 60
                     .dp)
@@ -211,6 +180,9 @@ fun spinner(context: Context)
 
         }
 
+    }
+    var mobilename3:String by remember {
+        mutableStateOf(array3[0])
     }
     var close3 by remember { mutableStateOf(false)}
     Card(modifier = Modifier
@@ -224,36 +196,25 @@ fun spinner(context: Context)
         }){
 
             DropdownMenu(
-                expanded = close3,
-                onDismissRequest = { close3 = false },
-                modifier = Modifier.padding(start = 40.dp)
+                expanded = close1,
+                onDismissRequest = { close1 = false },
+                modifier = Modifier.padding(start = 40.dp),
 
-            )
+                )
             {
-                DropdownMenuItem(onClick = {
-                    Toast.makeText(context,"Fistelement",Toast.LENGTH_SHORT).show()
-                    close3=false
-
-                }) {
-                    Text(text = "Avinash")
-                }
-                DropdownMenuItem(onClick = {
-                    Toast.makeText(context,"Fistelement",Toast.LENGTH_SHORT).show()
-                    close3=false
-                }) {
-                    Text(text = "Avinash")
-                }
-                DropdownMenuItem(onClick = {
-                    Toast.makeText(context,"Fistelement",Toast.LENGTH_SHORT).show()
-                    close3=false
-                }) {
-                    Text(text = "Avinash")
+                array3.forEach { city3 ->
+                    DropdownMenuItem(onClick = {
+                        close3 = false
+                        mobilename3 = city3
+                    }) {
+                        Text(city3)
+                    }
                 }
             }
             // Back arrow here
             Row() {
 
-                Text(text = mobilename,modifier = Modifier.padding(start = 40.dp))
+                Text(text = mobilename3,modifier = Modifier.padding(start = 40.dp))
                 Icon(imageVector =Icons.Filled.ArrowDropDown, contentDescription ="" ,modifier =
                 Modifier.padding(start = 60
                     .dp)
