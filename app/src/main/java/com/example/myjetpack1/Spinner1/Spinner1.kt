@@ -45,7 +45,8 @@ fun spinner(context: Context)
 
     var close by remember { mutableStateOf(false)}
 
-    var array3: Array<String> = arrayOf("Samsung Galaxy M30s 6GB","Suraj","suraj")
+    var array3: Array<String> = arrayOf("Samsung Galaxy M30s 6GB","Samsung Galaxy S21 Ultra 5G",
+        "Samsung Galaxy M31s")
 
     var mobilename:String by remember{
         mutableStateOf(array3[0])
@@ -82,9 +83,8 @@ fun spinner(context: Context)
                     Row() {
 
                         Text(text = mobilename,modifier = Modifier.padding(start = 40.dp))
-                   Icon(imageVector =Icons.Filled.ArrowDropDown, contentDescription ="" ,modifier =
-                   Modifier.padding(start = 60
-                       .dp)
+                        Icon(imageVector =Icons.Filled.ArrowDropDown, contentDescription ="" ,modifier =
+                        Modifier.padding(end = 7.dp)
                    )
                     }
 
@@ -158,12 +158,12 @@ fun spinner(context: Context)
 
                 )
             {
-                array3.forEach { city1 ->
+                array3.forEach { city2 ->
                     DropdownMenuItem(onClick = {
                         close2 = false
-                        mobilename2= city1
+                        mobilename2= city2
                     }) {
-                        Text(city1)
+                        Text(city2)
                     }
                 }
             }
@@ -196,8 +196,8 @@ fun spinner(context: Context)
         }){
 
             DropdownMenu(
-                expanded = close1,
-                onDismissRequest = { close1 = false },
+                expanded = close3,
+                onDismissRequest = { close3 = false },
                 modifier = Modifier.padding(start = 40.dp),
 
                 )
