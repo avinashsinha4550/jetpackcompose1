@@ -247,7 +247,7 @@ fun spinner(context: Context)
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Button(onClick = {},modifier = Modifier.fillMaxWidth())
+        Button(onClick = {},modifier = Modifier.fillMaxWidth(), )
         { Text("COMPARE") }
     }
 
