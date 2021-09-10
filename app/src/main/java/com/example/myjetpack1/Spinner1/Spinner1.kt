@@ -58,6 +58,8 @@ fun spinner(context: Context)
             .padding(top = 90.dp)
             .height(30.dp),
             backgroundColor = MaterialTheme.colors.surface,
+
+
         ) {
             Box (modifier = Modifier.clickable {
                 close=!close
@@ -79,14 +81,17 @@ fun spinner(context: Context)
                         }
                     }
                 }
+                Row() {
+                    Icon(imageVector =Icons.Filled.ArrowDropDown, contentDescription ="" ,modifier =
+                    Modifier.padding(start= 350.dp))
+                }
                 // Back arrow here
                     Row() {
 
                         Text(text = mobilename,modifier = Modifier.padding(start = 40.dp))
-                        Icon(imageVector =Icons.Filled.ArrowDropDown, contentDescription ="" ,modifier =
-                        Modifier.padding(end = 7.dp)
-                   )
+
                     }
+
 
 
                 }
@@ -123,14 +128,16 @@ fun spinner(context: Context)
                     }
                 }
             }
+            Row() {
+                Icon(imageVector =Icons.Filled.ArrowDropDown, contentDescription ="" ,modifier =
+                Modifier.padding(start= 350.dp))
+            }
             // Back arrow here
             Row() {
 
                 Text(text = mobilename1,modifier = Modifier.padding(start = 40.dp))
-                Icon(imageVector =Icons.Filled.ArrowDropDown, contentDescription ="" ,modifier =
-                Modifier.padding(start = 60
-                    .dp)
-                )
+
+
             }
 
 
@@ -167,14 +174,19 @@ fun spinner(context: Context)
                     }
                 }
             }
+            Row() {
+                Icon(imageVector =Icons.Filled.ArrowDropDown, contentDescription ="" ,modifier =
+                Modifier.padding(start= 350.dp))
+            }
+            Row() {
+                Icon(imageVector =Icons.Filled.ArrowDropDown, contentDescription ="" ,modifier =
+                Modifier.padding(start= 350.dp))
+            }
             // Back arrow here
             Row() {
 
                 Text(text = mobilename2,modifier = Modifier.padding(start = 40.dp))
-                Icon(imageVector =Icons.Filled.ArrowDropDown, contentDescription ="" ,modifier =
-                Modifier.padding(start = 60
-                    .dp)
-                )
+
             }
 
 
@@ -211,18 +223,32 @@ fun spinner(context: Context)
                     }
                 }
             }
+            Row() {
+                Icon(imageVector =Icons.Filled.ArrowDropDown, contentDescription ="" ,modifier =
+                Modifier.padding(start= 350.dp))
+            }
+            Row() {
+                Icon(imageVector =Icons.Filled.ArrowDropDown, contentDescription ="" ,modifier =
+                Modifier.padding(start= 350.dp))
+            }
             // Back arrow here
             Row() {
 
                 Text(text = mobilename3,modifier = Modifier.padding(start = 40.dp))
-                Icon(imageVector =Icons.Filled.ArrowDropDown, contentDescription ="" ,modifier =
-                Modifier.padding(start = 60
-                    .dp)
-                )
+
             }
 
 
         }
 
     }
+    Column(
+        modifier = Modifier.fillMaxWidth().fillMaxHeight(),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Button(onClick = {},modifier = Modifier.fillMaxWidth())
+        { Text("COMPARE") }
+    }
+
             }
