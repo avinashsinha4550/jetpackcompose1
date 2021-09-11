@@ -24,8 +24,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.PopupProperties
 import com.example.myjetpack1.R
 
@@ -33,6 +35,19 @@ class Spinner1: ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
+            Scaffold(topBar ={
+                TopAppBar(
+                    title = {  Icon(imageVector = Icons.Filled.ArrowDropDown, contentDescription = "")
+                        Text(text = "Comparision", fontSize = 18.sp,
+                            modifier = Modifier.padding(start = 110.dp))
+                    },
+                    backgroundColor = colorResource(id = R.color.purple_200),
+                    contentColor = Color.Black,
+
+                    )
+            }) {
+
+            }
             val context = this
             spinner(context)
         }
@@ -243,7 +258,9 @@ fun spinner(context: Context)
 
     }
     Column(
-        modifier = Modifier.fillMaxWidth().fillMaxHeight(),
+        modifier = Modifier
+            .fillMaxWidth()
+            .fillMaxHeight(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
