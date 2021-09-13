@@ -16,6 +16,9 @@ import androidx.compose.foundation.lazy.LazyListScope
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Check
+import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -62,7 +65,6 @@ fun FiltersButton()
                 Button(
                 onClick = {
                     selected.value=!selected.value
-
                 },
                 border = BorderStroke(1.dp,if(selected.value)
                     Color.Black
@@ -75,9 +77,10 @@ fun FiltersButton()
 
                 else
                     Color.White
-                ),
+                )
 
-            )   {  Row {
+            )   {
+                    Row {
 
                 Text("Prototyping")
             }
@@ -164,6 +167,13 @@ fun FiltersButton()
                 modifier = Modifier.padding(start = 10.dp)
 
             )  {  Row {
+                if (selected3.value==false)
+                {
+                    Icon(
+                        imageVector = Icons.Default.Check,
+                        contentDescription = null,
+                        modifier = Modifier.padding(start = 4.dp))
+                }
 
                 Text("Figma")
             }
