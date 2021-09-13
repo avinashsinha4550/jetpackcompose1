@@ -8,10 +8,9 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.background
+import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyListScope
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -38,10 +37,10 @@ class Filters:ComponentActivity() {
             Scaffold(topBar = {
                 TopAppBar( title = {  Image(painterResource(id = R.drawable.back_button), contentDescription ="" )
                     Text(text = "Filters", fontSize = 18.sp,
-                        modifier = Modifier.padding(start = 110.dp),
+                        modifier = Modifier.padding(start = 120.dp),
                     )
                     Text(text = "Clear", fontSize = 18.sp,
-                        modifier = Modifier.padding(start = 110.dp),
+                        modifier = Modifier.padding(start = 150.dp),
                     )
                 },
                     backgroundColor = colorResource(id = R.color.purple_200),
@@ -82,7 +81,23 @@ fun FiltersButton()
             )   {
                     Row {
 
-                Text("Prototyping")
+                        if (selected.value==false)
+                        {
+                            Icon(
+                                imageVector = Icons.Default.Check,
+                                contentDescription = null,
+                                modifier = Modifier
+                                    .size(20.dp),
+                                tint = Color.Red)
+
+                        }
+                        if (selected.value==false)
+                        {
+                            Text(text = "Prototyping",color = Color.Blue)
+                        }
+                        else {
+                            Text("Prototyping")
+                        }
             }
             }
                  var selected1=remember { mutableStateOf(true)}
@@ -109,7 +124,23 @@ fun FiltersButton()
                      Row ()
                      {
 
-                     Text("Sketch")
+                         if (selected1.value==false)
+                         {
+                             Icon(
+                                 imageVector = Icons.Default.Check,
+                                 contentDescription = null,
+                                 modifier = Modifier
+                                     .size(20.dp),
+                                 tint = Color.Red)
+
+                         }
+                         if (selected1.value==false)
+                         {
+                             Text(text = "Sketch",color = Color.Blue)
+                         }
+                         else {
+                             Text("Sketch")
+                         }
                  }
                  }
 
@@ -118,7 +149,7 @@ fun FiltersButton()
                      onClick = {
                          selected2.value=!selected2.value
                      },
-                     border = BorderStroke(1.dp,if(selected.value)
+                     border = BorderStroke(1.dp,if(selected2.value)
                          Color.Black
 
                      else
@@ -134,7 +165,23 @@ fun FiltersButton()
 
                  )  {  Row {
 
-                     Text("Product")
+                     if (selected2.value==false)
+                     {
+                         Icon(
+                             imageVector = Icons.Default.Check,
+                             contentDescription = null,
+                             modifier = Modifier
+                                 .size(20.dp),
+                             tint = Color.Red)
+
+                     }
+                     if (selected2.value==false)
+                     {
+                         Text(text = "Product",color = Color.Blue)
+                     }
+                     else {
+                         Text("Product")
+                     }
                  }
                  }
 
@@ -172,10 +219,18 @@ fun FiltersButton()
                     Icon(
                         imageVector = Icons.Default.Check,
                         contentDescription = null,
-                        modifier = Modifier.padding(start = 4.dp))
-                }
+                        modifier = Modifier
+                            .size(20.dp),
+                        tint = Color.Red)
 
-                Text("Figma")
+                }
+                    if (selected3.value==false)
+                    {
+                        Text(text = "Figma",color = Color.Blue)
+                    }
+                else {
+                        Text("Figma",)
+                    }
             }
             }
 
@@ -200,7 +255,23 @@ fun FiltersButton()
 
             ) {  Row {
 
-                Text("UI kit")
+                if (selected4.value==false)
+                {
+                    Icon(
+                        imageVector = Icons.Default.Check,
+                        contentDescription = null,
+                        modifier = Modifier
+                            .size(20.dp),
+                        tint = Color.Red)
+
+                }
+                if (selected4.value==false)
+                {
+                    Text(text = "UI kit",color = Color.Blue)
+                }
+                else {
+                    Text("UI kit",)
+                }
             }
             }
 
@@ -225,7 +296,23 @@ fun FiltersButton()
 
             )   {  Row {
 
-                Text("User Experince")
+                if (selected5.value==false)
+                {
+                    Icon(
+                        imageVector = Icons.Default.Check,
+                        contentDescription = null,
+                        modifier = Modifier
+                            .size(20.dp),
+                        tint = Color.Red)
+
+                }
+                if (selected5.value==false)
+                {
+                    Text(text = "User Experience",color = Color.Blue)
+                }
+                else {
+                    Text("User Experience")
+                }
             }
             }
 
@@ -259,7 +346,23 @@ fun FiltersButton()
 
             )  {  Row {
 
-                Text("Wireframing")
+                if (selected6.value==false)
+                {
+                    Icon(
+                        imageVector = Icons.Default.Check,
+                        contentDescription = null,
+                        modifier = Modifier
+                            .size(20.dp),
+                        tint = Color.Red)
+
+                }
+                if (selected6.value==false)
+                {
+                    Text(text = "Wire framing",color = Color.Blue)
+                }
+                else {
+                    Text("Wire framing")
+                }
             }
             }
 
@@ -284,7 +387,23 @@ fun FiltersButton()
 
             )   {  Row {
 
-                Text("XD")
+                if (selected7.value==false)
+                {
+                    Icon(
+                        imageVector = Icons.Default.Check,
+                        contentDescription = null,
+                        modifier = Modifier
+                            .size(20.dp),
+                        tint = Color.Red)
+
+                }
+                if (selected7.value==false)
+                {
+                    Text(text = "XD",color = Color.Blue)
+                }
+                else {
+                    Text("XD")
+                }
             }
             }
 
@@ -309,7 +428,23 @@ fun FiltersButton()
 
             )  {  Row {
 
-                Text("Leadership")
+                if (selected8.value==false)
+                {
+                    Icon(
+                        imageVector = Icons.Default.Check,
+                        contentDescription = null,
+                        modifier = Modifier
+                            .size(20.dp),
+                        tint = Color.Red)
+
+                }
+                if (selected8.value==false)
+                {
+                    Text(text = "Leadership",color = Color.Blue)
+                }
+                else {
+                    Text("Leadership")
+                }
             }
             }
 
