@@ -13,11 +13,13 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.RadioButton
+import androidx.compose.material.TabRowDefaults.Divider
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 
 import androidx.compose.ui.unit.dp
@@ -80,10 +82,11 @@ fun setlayout( user: User)
             Column() {
                 Text(
                     text = "Samsung M31 12GB", modifier =Modifier.padding(
-                        top = 24.dp, start = 22.dp
+                        top = 24.dp, start = 22.dp,bottom = 2.dp
                     )
                 )
-                Text(text = "------------------------------------------------------------------------------------")
+                Divider(color = Color.Black, thickness = 1.dp)
+
                 Row() {
       Image(painter = painterResource(id = user.puppyimage1!!), contentDescription = "false",modifier =
       Modifier.size(150.dp))
@@ -152,9 +155,10 @@ fun setlayout( user: User)
                 }
                 Column() {
 
-                    Text(text = "-------------------------------------------------------------------------------------")
+                    Divider(color = Color.Black, thickness = 1.dp)
 
                     Row() {
+                        var buttonchange:Boolean=true
                         Text(
                             text = "ADD to Compare", modifier = androidx.compose.ui.Modifier.padding(
                                 top = 4.dp, start = 22.dp
@@ -162,11 +166,17 @@ fun setlayout( user: User)
                         )
                         val mRememberObserver = remember { mutableStateOf("") }
 
-                        RadioButton(modifier = androidx.compose.ui.Modifier.padding(
+                        RadioButton(modifier = Modifier.padding(
                             top = 4.dp, start = 150.dp
                         ),
+
                             selected = mRememberObserver.value == "mText",
-                            onClick = { mRememberObserver.value = "mText" })
+                            onClick = {
+                                mRememberObserver.value = "mText"
+                         },
+
+
+                        )
 
                     }
 

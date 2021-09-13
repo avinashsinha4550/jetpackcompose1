@@ -1,6 +1,7 @@
 package com.example.myjetpack1.Spinner1
 
 import android.content.Context
+import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
 import android.graphics.drawable.PaintDrawable
 import android.os.Bundle
@@ -14,6 +15,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
+import androidx.compose.material.ButtonDefaults.buttonColors
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.ArrowDropDown
@@ -25,10 +27,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.PopupProperties
+import androidx.core.content.res.ResourcesCompat
 import com.example.myjetpack1.R
 
 class Spinner1: ComponentActivity() {
@@ -37,12 +41,16 @@ class Spinner1: ComponentActivity() {
         setContent {
             Scaffold(topBar ={
                 TopAppBar(
-                    title = {  Icon(imageVector = Icons.Filled.ArrowDropDown, contentDescription = "")
+                    title = {  Image(painterResource(id = R.drawable.back_button), contentDescription ="" )
                         Text(text = "Comparision", fontSize = 18.sp,
-                            modifier = Modifier.padding(start = 110.dp))
+                            modifier = Modifier.padding(start = 110.dp),
+                        )
+                        Text(text = "Clear", fontSize = 18.sp,
+                            modifier = Modifier.padding(start = 110.dp),
+                        )
                     },
                     backgroundColor = colorResource(id = R.color.purple_200),
-                    contentColor = Color.Black,
+                    contentColor = Color.White
 
                     )
             }) {
@@ -264,7 +272,8 @@ fun spinner(context: Context)
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Button(onClick = {},modifier = Modifier.fillMaxWidth(), )
+
+        Button(onClick = {},modifier = Modifier.fillMaxWidth())
         { Text("COMPARE") }
     }
 
