@@ -2,6 +2,7 @@ package com.example.myjetpack1.filters
 
 import android.app.Application
 import android.content.Context
+import android.graphics.fonts.FontFamily
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.ComponentActivity
@@ -13,18 +14,25 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyListScope
 import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowDropDown
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Alignment.Companion.CenterVertically
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontFamily.Companion.Cursive
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -58,6 +66,44 @@ class Filters:ComponentActivity() {
 @Preview
 fun FiltersButton()
 {
+        var list= listOf<String>("Brand","RAM","Storage","Display","Battery").map { it.toString() }
+    LazyRow( modifier = Modifier
+        .fillMaxWidth()
+        .padding(top = 50.dp)
+        .wrapContentHeight()
+        .background(Color(0xFFF7F4F3)))
+    {
+        items(items = list,itemContent =    {
+            item ->  Card( modifier = Modifier
+            .fillMaxWidth(),
+            backgroundColor = Color(0xFFF7F4F3)
+           ) {
+            Row(modifier = Modifier.padding(12.dp)){
+
+                Text(
+                    text = item,
+                    fontSize =20.sp,
+
+                    modifier = Modifier
+
+                        .fillMaxWidth(),
+                    textAlign = TextAlign.Center
+                )
+                Row() {
+                    Icon(
+                        imageVector = Icons.Default.ArrowDropDown,
+                        contentDescription = null,
+                        )
+
+                }
+            }
+
+            
+        }
+        })
+
+
+    }
         var selected=remember { mutableStateOf(true)}
     Column() {
              Row( modifier = Modifier.padding(start = 20.dp,top = 190.dp,end = 10.dp)) {
@@ -88,9 +134,10 @@ fun FiltersButton()
                                 contentDescription = null,
                                 modifier = Modifier
                                     .size(20.dp),
-                                tint = Color.Red)
+                                tint = Color.Blue)
 
                         }
+                        Spacer(modifier = Modifier.width(1.dp))
                         if (selected.value==false)
                         {
                             Text(text = "Prototyping",color = Color.Blue)
@@ -131,9 +178,10 @@ fun FiltersButton()
                                  contentDescription = null,
                                  modifier = Modifier
                                      .size(20.dp),
-                                 tint = Color.Red)
+                                 tint = Color.Blue)
 
                          }
+                         Spacer(modifier = Modifier.width(1.dp))
                          if (selected1.value==false)
                          {
                              Text(text = "Sketch",color = Color.Blue)
@@ -172,9 +220,10 @@ fun FiltersButton()
                              contentDescription = null,
                              modifier = Modifier
                                  .size(20.dp),
-                             tint = Color.Red)
+                             tint = Color.Blue)
 
                      }
+                     Spacer(modifier = Modifier.width(1.dp))
                      if (selected2.value==false)
                      {
                          Text(text = "Product",color = Color.Blue)
@@ -221,9 +270,10 @@ fun FiltersButton()
                         contentDescription = null,
                         modifier = Modifier
                             .size(20.dp),
-                        tint = Color.Red)
+                        tint = Color.Blue)
 
                 }
+                Spacer(modifier = Modifier.width(1.dp))
                     if (selected3.value==false)
                     {
                         Text(text = "Figma",color = Color.Blue)
@@ -262,9 +312,10 @@ fun FiltersButton()
                         contentDescription = null,
                         modifier = Modifier
                             .size(20.dp),
-                        tint = Color.Red)
+                        tint = Color.Blue)
 
                 }
+                Spacer(modifier = Modifier.width(1.dp))
                 if (selected4.value==false)
                 {
                     Text(text = "UI kit",color = Color.Blue)
@@ -303,9 +354,10 @@ fun FiltersButton()
                         contentDescription = null,
                         modifier = Modifier
                             .size(20.dp),
-                        tint = Color.Red)
+                        tint = Color.Blue)
 
                 }
+                Spacer(modifier = Modifier.width(1.dp))
                 if (selected5.value==false)
                 {
                     Text(text = "User Experience",color = Color.Blue)
@@ -353,9 +405,10 @@ fun FiltersButton()
                         contentDescription = null,
                         modifier = Modifier
                             .size(20.dp),
-                        tint = Color.Red)
+                        tint = Color.Blue)
 
                 }
+                Spacer(modifier = Modifier.width(1.dp))
                 if (selected6.value==false)
                 {
                     Text(text = "Wire framing",color = Color.Blue)
@@ -394,9 +447,10 @@ fun FiltersButton()
                         contentDescription = null,
                         modifier = Modifier
                             .size(20.dp),
-                        tint = Color.Red)
+                        tint = Color.Blue)
 
                 }
+                Spacer(modifier = Modifier.width(1.dp))
                 if (selected7.value==false)
                 {
                     Text(text = "XD",color = Color.Blue)
@@ -435,9 +489,10 @@ fun FiltersButton()
                         contentDescription = null,
                         modifier = Modifier
                             .size(20.dp),
-                        tint = Color.Red)
+                        tint = Color.Blue)
 
                 }
+                Spacer(modifier = Modifier.width(1.dp))
                 if (selected8.value==false)
                 {
                     Text(text = "Leadership",color = Color.Blue)
